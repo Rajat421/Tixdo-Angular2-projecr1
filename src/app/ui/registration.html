@@ -1,0 +1,29 @@
+
+
+<form #RegisterForm="ngForm" (ngSubmit)="registerUser(RegisterForm)">
+  <div>
+  <label for="mobileno">Mobile No</label>
+  <input type="text" name="mobileno" id="mobileno" minlength="10" maxlength="10"
+         [(ngModel)]="model.MobileNo"  >
+    <button (click)="sentMobileNo(model.MobileNo)">verify</button>
+    </div>
+  <div>
+<label for="email">Email</label>
+<input type="text" name="email" id="email" [(ngModel)]="model.Email" required pattern=".{10,20}">
+    </div>
+<div>
+
+  <label for="password">Password</label>
+  <input type="password" name="password" id="password" [(ngModel)]="model.Password" pattern=".{6,12}" required >
+
+</div>
+
+
+<button (click)="sentOtp(model.MobileNo)">Generate Otp</button>
+
+<div *ngIf="showOtpField"> <label for="otp">OTP</label>
+  <input type="otp" name="otp" id="otp"  required #otp>
+  <button type='submit'>Sign Up</button></div>
+
+</form>
+<div>{{obj}}</div>

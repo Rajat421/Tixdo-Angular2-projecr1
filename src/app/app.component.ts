@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
+import {RegistrationForm} from './ui/registration-form'
+import {UserService} from  './services/user-service'
+import {NgForm} from '@angular/forms'
 
 @Component({
-  moduleId: module.id,
+
   selector: 'app-root',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.css']
+  templateUrl: './app/app.component.html',
+  styleUrls: [''],
+  directives:[RegistrationForm],
+  providers:[UserService,NgForm]
+
 })
 export class AppComponent {
   title = 'app works!';
